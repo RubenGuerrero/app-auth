@@ -6,13 +6,19 @@
 
 <form {{action 'authenticate' on='submit'}}>
 
+  {{#if errorMessage}}
+      <div class="alert alert-danger" role="alert">
+          Username or password wrong!
+      </div>
+  {{/if}}
+
   <div class="form-group">
-    <label for="loginEmail">Email</label>
-    {{input id='identification' placeholder='Username' class='form-control' value=identification}}
+    <label for="username">Username</label>
+    {{input id='username' placeholder='Username' class='form-control' value=identification}}
   </div>
 
   <div class="form-group">
-    <label for="registerPassword">Password</label>
+    <label for="password">Password</label>
     {{input id='password' placeholder='Password' type='password' class='form-control' value=password}}
   </div>
 

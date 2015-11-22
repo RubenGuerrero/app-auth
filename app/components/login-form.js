@@ -6,7 +6,9 @@ export default Ember.Component.extend({
   actions: {
     authenticate() {
       const { identification, password } = this.getProperties('identification', 'password');
-      return this.get('session').authenticate('authenticator:oauth2', identification, password);
+      this.get('session').authenticate('authenticator:oauth2', identification, password).catch((message) => {
+        this.set('errorMessage', message);
+      });
     }
   }
 });

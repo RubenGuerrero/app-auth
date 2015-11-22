@@ -1,5 +1,7 @@
 module.exports = function(app) {
 
+  'use strict';
+
   app.post('/register', function(req, res) {
     res.setHeader('Content-Type', 'application/json');
 
