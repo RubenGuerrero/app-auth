@@ -1,1 +1,1 @@
-web: npm install -g ember && npm start
+web: npm install -g ember-cli && ember serve --port 80
